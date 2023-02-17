@@ -1,5 +1,6 @@
 deployments:
   Bedrock:
     filename: ./docker-compose.yml
-    run_options: --env APP_URL=https://${SQUASH_DOMAIN}
-    port_forwarding: 80:8080
+    port_forwarding: 8080:8080
+    environment:
+      - APP_URL=https://${SQUASH_DOMAIN}
