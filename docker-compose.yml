@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/var/www/html
+      #- .:/var/www/html
 
       #- ./docker/uploads:/var/www/html/web/app/uploads
       # if the uploads data should be saved in the bind mount instead of the volume
@@ -51,7 +51,7 @@ services:
       - "8080:80"
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - .:/var/www/html
+    #  - .:/var/www/html
     restart: always
 
 # if the db data should be saved in the bind mount instead of the volume
