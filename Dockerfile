@@ -3,6 +3,9 @@ FROM php:8.1-fpm
 # Install required PHP extensions
 RUN docker-php-ext-install mysqli pdo_mysql
 
+# Enable execution of composer as root user
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
 # Install stuff to make composer work (however this was not needed on my ARM Mac)
 RUN apt-get update && apt-get install -y zip unzip git
 
@@ -16,8 +19,7 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Install the project dependencies with Composer
-#//TODO: Find out why it installs all except wordpress...
-RUN composer install --no-interaction
+RUN composer install --working-dir=/var/www/html
 
 # Set the ownership of the Bedrock files to the www-data user
 RUN chown -R www-data:www-data /var/www/html
