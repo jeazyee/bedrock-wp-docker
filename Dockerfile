@@ -3,6 +3,9 @@ FROM php:8.1-fpm
 # Install required PHP extensions
 RUN docker-php-ext-install mysqli pdo_mysql
 
+# Install stuff to make composer work (however this was not needed on my ARM Mac)
+RUN apt-get install zip unzip git
+
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
