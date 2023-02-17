@@ -9,7 +9,7 @@ web/app/uploads/*
 web/app/cache/*
 
 # WordPress
-#web/wp //TODO: find out why it does not install wordpress with composer install, even it should be doing it...
+web/wp
 web/.htaccess
 
 # Logs
