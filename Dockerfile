@@ -13,9 +13,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /var/www/html
 
 # Copy the Bedrock files into the container
-COPY . .
+COPY . /var/www/html
 
 # Install the project dependencies with Composer
+#//TODO: Find out why it installs all except wordpress...
 RUN composer install --no-interaction
 
 # Set the ownership of the Bedrock files to the www-data user
