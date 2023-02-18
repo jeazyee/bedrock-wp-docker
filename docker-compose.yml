@@ -21,14 +21,16 @@ services:
       APP_ENV: ${APP_ENV:-development}
       APP_DEBUG: ${APP_DEBUG:-true}
       APP_URL: ${APP_URL:-http://localhost:8080}
+
+      WP_ENV: ${APP_ENV:-development}
+      WP_HOME: ${APP_URL:-http://localhost:8080}
+      WP_SITEURL: ${APP_URL:-http://localhost:8080}/wp
+
       DB_HOST: db
       DB_NAME: ${DB_NAME:-bedrock}
       DB_USER: ${DB_USER:-user}
       DB_PASSWORD: ${DB_PASSWORD:-password}
       DB_PREFIX: ${DB_PREFIX:-wp_}
-      WP_HOME: ${APP_URL:-http://localhost:8080}
-      WP_SITEURL: ${APP_URL:-http://localhost:8080}/wp
-      WP_ENV: ${APP_ENV:-development}
 
       AUTH_KEY: 'generateme'
       SECURE_AUTH_KEY: 'generateme'
