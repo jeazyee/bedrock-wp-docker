@@ -27,6 +27,16 @@ services:
       DB_PREFIX: ${DB_PREFIX:-wp_}
       WP_HOME: ${APP_URL:-http://localhost:8080}
       WP_SITEURL: ${APP_URL:-http://localhost:8080}/wp
+      WP_ENV: ${APP_ENV:-development}
+
+      AUTH_KEY: 'generateme'
+      SECURE_AUTH_KEY: 'generateme'
+      LOGGED_IN_KEY: 'generateme'
+      NONCE_KEY: 'generateme'
+      AUTH_SALT: 'generateme'
+      SECURE_AUTH_SALT: 'generateme'
+      LOGGED_IN_SALT: 'generateme'
+      NONCE_SALT: 'generateme'
     restart: always
 
   db:
