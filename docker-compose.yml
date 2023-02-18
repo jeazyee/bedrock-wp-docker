@@ -10,13 +10,19 @@ services:
     volumes:
       - document_root:/var/www/html:rw
       - uploads:/var/www/html/web/app/uploads:rw
-
-    env_file: .env
-
     environment:
       APP_ENV: ${APP_ENV:-development}
       APP_DEBUG: ${APP_DEBUG:-true}
       APP_URL: ${APP_URL:-http://localhost:8080}
+
+      WP_ENV: ${APP_ENV:-development}
+      WP_HOME: ${APP_URL:-http://localhost:8080}
+      WP_SITEURL: ${WP_HOME}/wp
+
+      DB_NAME: ${DB_NAME:-bedrock}
+      DB_USER: ${DB_USER:-user}
+      DB_PASSWORD: ${DB_PASSWORD:-password}
+      DB_HOST: db
     restart: always
 
   db:

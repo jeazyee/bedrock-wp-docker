@@ -108,7 +108,7 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Install the project dependencies with Composer
-RUN composer install
+RUN composer install --working-dir=/var/www/html
 
 # Set the ownership of the Bedrock files to the www-data user
 #RUN chown -R www-data:www-data /var/www/html
