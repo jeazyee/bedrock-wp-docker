@@ -17,6 +17,7 @@ services:
       - uploads:/var/www/html/web/app/uploads 
 
     environment:
+      NGINX_SERVER_NAME: ${NGINX_SERVER_NAME:-localhost}
       APP_ENV: ${APP_ENV:-development}
       APP_DEBUG: ${APP_DEBUG:-true}
       APP_URL: ${APP_URL:-http://localhost:8080}
